@@ -1,5 +1,5 @@
-A = 10
 from time import time
+import math
 
 def calculate_time(func):
     def wrapper(*args, **kwargs):
@@ -12,18 +12,16 @@ def calculate_time(func):
         return result
     return wrapper
 
+
 @calculate_time
-def factors_count(A):
-
-    count = 0
+def Solve(A):
+    is_square_num = -1
     for i in range(1,A+1):
-        if i > A/i:
-            return count
-        if A%i == 0:
-            count += 2
-    
-    return count
-
-print("AAnswer",factors_count(20**10))
+        if i*i == A:
+            is_square_num=i
+        if i*i > A:
+            break
+    return is_square_num
 
 
+print("Is Square num => ",Solve(10**12))
