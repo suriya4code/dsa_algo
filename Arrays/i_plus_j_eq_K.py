@@ -20,6 +20,14 @@ def solve(arr,k):
                 return True
     return False
 
+def solve2(A, B):
+    for i in range(len(A)):
+        for j in range(i+1,len(A)):
+            if A[i] + A[j] == B and A[i] != A[j]:
+                return 1
+    return 0
+# A : [ 1, 2, 3, 4 ]
+# B : 7
 
 
-print("Exisits pair => ",solve(list(range(10**6)), 10**4))
+print("Exisits pair => ",solve2([ 1, 2, 2 ],4))

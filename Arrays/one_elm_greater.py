@@ -13,18 +13,13 @@ def calculate_time(func):
     return wrapper
 
 @calculate_time
-def solve(A):
-    start = 0
-    N = len(A)
-    end = N-1
-
-    while start < end:
-        A[start],A[end] = A[end],A[start]
-        start += 1
-        end -= 1
-        
-    return A
+def solve(arr):
+    max_no = -math.inf
+    for i in range(len(arr)):
+        if (arr[i] > max_no):
+            max_no = arr[i]
+    no_of_max = arr.count(max_no)
+    return len(arr)-no_of_max
 
 
-
-print("Reversed Aay => ",solve(list(range(10))))
+print("no of elements => ",solve([-1,-2,-3,-1]))

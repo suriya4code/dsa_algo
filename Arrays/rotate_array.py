@@ -13,9 +13,9 @@ def calculate_time(func):
     return wrapper
 
 
-def reverse(arr,N,i,j):
+def reverse(arr,i,j):
     start = i
-    end = j-1
+    end = j
 
     while start < end:
         arr[start],arr[end] = arr[end],arr[start]
@@ -24,12 +24,18 @@ def reverse(arr,N,i,j):
         
     return arr
 
+# A = [ 8, 7, 7, 6, 6, 3, 1, 5, 7 ]
+# B = 0
+# C = 3
+# print("Reversed array from B to C=> ",reverse(A,B,C))
+
+
 
 @calculate_time
 def solve(arr,N,k):
-    r1 = reverse(arr,N,0,N-1)
-    r2 = reverse(r1,N,0,k-1)
-    r3 = reverse(r2,N,k,N-1)
+    r1 = reverse(arr,0,N-1)
+    r2 = reverse(r1,0,k-1)
+    r3 = reverse(r2,k,N-1)
 
     return r3
     
