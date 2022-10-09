@@ -1,4 +1,3 @@
-from pickletools import optimize
 from time import time
 def calculate_time(func):
     def wrapper(*args, **kwargs):
