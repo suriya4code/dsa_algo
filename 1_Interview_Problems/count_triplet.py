@@ -37,3 +37,5 @@ def solve(A):
                 r += 1
         ans += (l * r)
     return ans
+
+print(solve(A))

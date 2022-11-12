@@ -33,6 +33,7 @@ def reverse(arr,i,j):
 
 @calculate_time
 def solve(arr,N,k):
+    k = N%k
     r1 = reverse(arr,0,N-1)
     r2 = reverse(r1,0,k-1)
     r3 = reverse(r2,k,N-1)
@@ -43,4 +44,4 @@ def solve(arr,N,k):
 
 
 
-print("Reversed array => ",solve(list(range(10)),10,3))
+print("Reversed array => ",solve(list(range(10)),10,13))
