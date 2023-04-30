@@ -7,4 +7,4 @@ def findAthFibonacci(A):
         return 1
     return findAthFibonacci(A-1) + findAthFibonacci(A-2)
 
-print(findAthFibonacci(5))
+print(findAthFibonacci(6))
